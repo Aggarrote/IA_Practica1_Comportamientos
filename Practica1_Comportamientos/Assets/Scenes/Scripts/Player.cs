@@ -14,20 +14,34 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement_Rotation();
+        Movement();
     }
-
-    void Movement_Rotation()
-    {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            Movement();
-        }
-    }
-  
     void Movement()
     {
-       
+        var direction = Vector3.zero;
+        if (Input.GetKey(KeyCode.W))
+        {
+            direction += Vector3.forward;
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            direction += Vector3.back;
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            direction += Vector3.right;
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            direction += Vector3.left;
+        }
+
+        if (direction == Vector3.zero) return;
+
+        this.transform.Translate(direction.normalized * (this.speed * Time.deltaTime), Space.Self);
+        this.transform.rotation = Quaternion.Euler(0.0f, Mathf.Atan2(direction.x, direction.z), 0.0f);
     }
 }
