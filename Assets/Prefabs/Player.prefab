@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8299916132289944205}
   - component: {fileID: 8340760551412517494}
   - component: {fileID: 3846354429442515882}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,9 +115,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4509633785203121903}
   - component: {fileID: 9159510302494750472}
-  m_Layer: 0
+  - component: {fileID: -3555796943169858127}
+  - component: {fileID: 4792813145042084754}
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +152,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed672894f2b9d44796b46b45986532c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  normalSpeed: 10
+  rotationSpeed: 300
+--- !u!114 &-3555796943169858127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906381948501493543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d9dd1b9a97f4f95b13a55a70b08d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundArea: {fileID: 4394211206563942405, guid: 78f8adbfd7f05ab49acd0d534a59b484, type: 3}
+  maxTimer: 0.5
+--- !u!54 &4792813145042084754
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906381948501493543}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &7407162960675224502
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +207,7 @@ GameObject:
   - component: {fileID: 3725217963377985611}
   - component: {fileID: 2830306228529696735}
   - component: {fileID: 5409547588985816358}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
